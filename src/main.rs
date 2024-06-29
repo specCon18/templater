@@ -1,3 +1,5 @@
+//TODO: Add Build Tooling for each template :ODOT//
+
 use clap::Parser;
 use std::{env, fs, io, path::Path};
 /// Simple program to greet a person
@@ -53,8 +55,11 @@ fn main() {
             let _ = copy_recursively("./templates/haskell/", args.output_path);
             println!("cloning {} template!", args.template);
         }
+        "js" => {
+            let _ = copy_recursively("./templates/js/", args.output_path);
+            println!("cloning {} template!", args.template);
+        }
         "ocaml" => {
-            //TODO: Setup OCAML Tooling :ODOT//
             let _ = copy_recursively("./templates/ocaml/", args.output_path);
             println!("cloning {} template!", args.template);
         }

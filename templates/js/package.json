@@ -1,0 +1,35 @@
+{
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "format": "prettier --write --ignore-unknown .",
+    "build-njks": "nunjucks **/*.njk -w -p src/views/ -o dist",
+    "build-css": "tailwindcss -i src/styles/main.css -o dist/main.css --verbose --watch",
+    "watch": "yarn run build-css & yarn run build-njks & yarn run start &",
+    "check": "lhci autorun",
+    "prod": "nunjucks *.njk -p src/views/ -o dist && tailwindcss -i src/styles/main.css -o dist/main.css && cp -r src/scripts/ dist/scripts/ && cp -r src/images/ dist/ && cp -r src/data/ dist/data/",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.13.0",
+    "autoprefixer": "^10.4.19",
+    "husky": "^9.0.11",
+    "lighthouse": "^12.0.0",
+    "lint-staged": "^15.2.2",
+    "nunjucks": "^3.2.4",
+    "nunjucks-cli": "^1.0.0",
+    "postcss": "^8.4.38",
+    "prettier": "3.2.5",
+    "prettier-plugin-jinja-template": "^1.4.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.3",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
