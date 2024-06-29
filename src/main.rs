@@ -1,7 +1,5 @@
-//TODO: Add Build Tooling for each template :ODOT//
-
 use clap::Parser;
-use std::{env, fs, io, path::Path};
+use std::{fs, io, path::Path};
 /// Simple program to greet a person
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
