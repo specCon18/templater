@@ -41,12 +41,21 @@ fn main() {
             let _ = copy_recursively("./templates/c/", args.output_path);
             println!("cloning {} template!", args.template);
         }
+        "empty" => {
+            let _ = copy_recursively("./templates/empty/", args.output_path);
+            println!("cloning {} template!", args.template);
+        }
         "go" => {
             let _ = copy_recursively("./templates/go/", args.output_path);
             println!("cloning {} template!", args.template);
         }
         "haskell" => {
             let _ = copy_recursively("./templates/haskell/", args.output_path);
+            println!("cloning {} template!", args.template);
+        }
+        "ocaml" => {
+            //TODO: Setup OCAML Tooling :ODOT//
+            let _ = copy_recursively("./templates/ocaml/", args.output_path);
             println!("cloning {} template!", args.template);
         }
         "python" => {
